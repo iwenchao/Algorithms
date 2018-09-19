@@ -1,6 +1,5 @@
 package com.iwenchaos.mdualgor;
 
-import android.support.annotation.NonNull;
 
 /**
  * Created by chaos
@@ -17,7 +16,7 @@ public class LinkNumAdd {
     }
 
 
-    public ListNode addTwoNumbers(@NonNull ListNode l1, @NonNull ListNode l2) {
+    public ListNode addTwoNumbers( ListNode l1,  ListNode l2) {
         final ListNode dummyHead = new ListNode(0);
         ListNode p = l1, q = l2, curr = dummyHead;
         int carry = 0;
