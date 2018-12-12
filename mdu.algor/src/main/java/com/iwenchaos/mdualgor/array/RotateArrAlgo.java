@@ -91,11 +91,11 @@ public class RotateArrAlgo {
             int _tmp = nums[i];
             nums[i] = tmp;
 
-            if(i == offset){
+            if (i == offset) {
                 ++offset;
                 ++i;
                 tmp = nums[i];
-            }else {
+            } else {
                 tmp = _tmp;
             }
 
