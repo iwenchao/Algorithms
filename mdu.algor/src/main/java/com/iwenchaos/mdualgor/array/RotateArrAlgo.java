@@ -14,11 +14,12 @@ package com.iwenchaos.mdualgor.array;
 public class RotateArrAlgo {
 
     public static void main(String[] args) {
-        int[] nums = {5, 4, 7, 4, 4, 3, -2};
-        print(nums);
-        nums = rotate2(nums, 1);
-        print(nums);
-//        System.out.println(7 % 7);
+        int[] nums = {1, 2, 3, 4, 5, 6, 9};
+//        nums = rotate(nums, 3);
+
+        rotate3(nums, 4);
+
+
     }
 
     /**
@@ -50,21 +51,57 @@ public class RotateArrAlgo {
 
     /**
      * 解法2 采用 取模方式
+     * 没有在原来的数组操作
      */
-    public static int[] rotate2(int[] nums, int k) {
+    public static void rotate2(int[] nums, int k) {
         if (nums == null || nums.length < 2) {
-            return nums;
+            return;
         }
         int len = nums.length;
-        int mod = k % len;
+        k = k % len;
         int tmp = nums[0];
-        for (int i = 0, count = 0; count < len; count++) {
-            int _tmp = nums[(i + mod) % len];
-            nums[(i + mod) % len] = tmp;
-            tmp = _tmp;
-            i = i + mod;
+        int[] result = new int[len];
+
+        for (int i = 0; i < len; i++) {
+            int j = (i + k) % len;
+            result[j] = nums[i];
         }
-        return nums;
+        print(nums);
+        print(result);
+    }
+
+    /**
+     * 解法2 采用 取模方式
+     * 在原来的数组操作
+     */
+    private static void rotate3(int[] nums, int k) {
+        if (nums == null || nums.length < 2) {
+            return;
+        }
+        print(nums);
+        int len = nums.length;
+        k = k % len;
+        int offset = 0;
+        int count = 0;
+        int i = 0;
+        int tmp = nums[i];
+
+        while (count++ < nums.length) {
+            i = (i + k) % len;
+            int _tmp = nums[i];
+            nums[i] = tmp;
+
+            if(i == offset){
+                ++offset;
+                ++i;
+                tmp = nums[i];
+            }else {
+                tmp = _tmp;
+            }
+
+        }
+        print(nums);
+
     }
 
     private static void print(int[] nums) {
