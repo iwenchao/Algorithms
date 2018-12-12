@@ -8,7 +8,7 @@ package com.iwenchaos.mdualgor;
 public class MaxDisrepeatStr {
 
     public static void main(String[] args) {
-
+        System.out.print(maxDisrepeatStrLen("adbchbcef"));
 
     }
 
@@ -33,7 +33,7 @@ public class MaxDisrepeatStr {
                 tmpStr = suf;
             }
         }
-
+        System.out.println(maxTarget);
         return maxTarget.length();
     }
 }
