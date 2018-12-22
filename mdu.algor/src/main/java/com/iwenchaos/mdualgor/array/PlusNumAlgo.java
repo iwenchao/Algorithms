@@ -66,4 +66,37 @@ public class PlusNumAlgo {
             return digits;
         }
     }
+
+    /**
+     * 这个方法可以做到 对数组加法任一数字
+     *
+     * @param digits
+     * @return
+     */
+    private static int[] plusNum(int[] digits) {
+        if (digits == null || digits.length == 0) {
+            return digits;
+        }
+        boolean decimaled = true;
+        for (int i = digits.length - 1; i >= 0; i--) {
+            int value = digits[i] + (decimaled ? 1 : 0);
+            digits[i] = value % 10;
+            decimaled = value == 10;
+            if (!decimaled) {
+                break;
+            }
+        }
+
+        if (decimaled) {
+            int[] result = new int[digits.length + 1];
+            result[0] = 1;
+            for (int i = 0; i < digits.length; i++) {
+                result[i + 1] = digits[i];
+            }
+            return result;
+        } else {
+            return digits;
+        }
+    }
+
 }
