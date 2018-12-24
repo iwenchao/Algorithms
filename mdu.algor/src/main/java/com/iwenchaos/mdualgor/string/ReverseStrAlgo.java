@@ -3,7 +3,12 @@ package com.iwenchaos.mdualgor.string;
 /**
  * Created by chaos
  * on 2018/12/24. 14:18
- * 文件描述：
+ * 文件描述：编写一个函数，其作用是将输入的字符串反转过来。
+ *
+ * 示例 1:
+ *
+ * 输入: "hello"
+ * 输出: "olleh"
  */
 public class ReverseStrAlgo {
 
