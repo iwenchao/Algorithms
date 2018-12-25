@@ -28,7 +28,7 @@ public class LongestPalindromeAlgo {
         String tmp = null;
         for (int i = 0; i < s.length(); i++) {
             tmp = getCenterPalindrome(s, i, i);
-            if(tmp.length() > longest.length()){
+            if (tmp.length() > longest.length()) {
                 longest = tmp;
             }
         }
