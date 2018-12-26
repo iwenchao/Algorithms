@@ -32,7 +32,7 @@ public class LongestCommonPrefixAlgo {
         if (sArr == null || sArr.length == 0) {
             return "";
         }
-        if(sArr.length == 1){
+        if (sArr.length == 1) {
             return sArr[0];
         }
         String outer = sArr[0];
