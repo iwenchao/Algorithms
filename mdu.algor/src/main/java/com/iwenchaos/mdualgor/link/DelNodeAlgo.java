@@ -34,10 +34,13 @@ public class DelNodeAlgo {
     }
 
 
-    private static void deleteNode(ListNode node) {
-        node.val = node.next.val;//将待删除node节点的下一个节点value赋值给del node
-        node.next = node.next.next;////将待删除node节点的下一个节点的next赋值给del node next
+    private static void deleteNode(ListNode delNode) {
+        delNode.val = delNode.next.val;//将待删除node节点的下一个节点value赋值给del node
+        delNode.next = delNode.next.next;////将待删除node节点的下一个节点的next赋值给del node next
     }
+
+
+
 
 
 }
