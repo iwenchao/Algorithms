@@ -21,10 +21,15 @@ public class ReverseListAlgo {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-        reverseList(head);
+        reverseList2(head);
     }
 
-
+    /**
+     * 递归 从最后一个节点 向前走
+     *
+     * @param head
+     * @return
+     */
     private static ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {//循环到单链表的最后一个节点，返回该节点
             return head;
@@ -35,6 +40,26 @@ public class ReverseListAlgo {
             return node;
         }
 
+    }
+
+    /**
+     * 指针，从头向尾走
+     *
+     * @param head
+     * @return
+     */
+    private static ListNode reverseList2(ListNode head) {
+        ListNode pre = head;
+        ListNode cur = head.next;
+        ListNode tmp = head.next.next;
+        while (cur != null) {
+            tmp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = tmp;
+        }
+        head.next = null;
+        return pre;
     }
 
 
