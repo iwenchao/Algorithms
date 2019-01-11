@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Algorithms</string>
+    <string name="add_and_count">添加新书，当前总共有书%1$d本</string>
 </resources>
