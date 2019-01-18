@@ -1,5 +1,7 @@
 package com.iwenchaos.mdualgor.link;
 
+import java.util.Stack;
+
 /**
  * Created by chaos
  * on 2018/12/27. 13:53
@@ -24,14 +26,27 @@ public class PalindromeLinkListAlgo {
     }
 
 
+    /**
+     * 利用栈结构，将链表压入栈内，这样链表和栈在值的对应上其实是一致的，如果是回文的话。
+     */
     private static boolean isPalindrome(ListNode head) {
-        ListNode pre = head;
-        ListNode tail = null;
-//        while (){
-//
-//        }
+        //先利用stack 将链表压入栈内
+        Stack<ListNode> stack = new Stack<>();
+        ListNode cur = head;
+        while (cur != null) {
+            stack.push(cur);
+            cur = cur.next;
+        }
 
-        return false;
+        //依次对比两者的值 是否一样。一旦不同，则说明不是回文
+        while (head != null) {
+            if (head.val != stack.pop().val) {
+                return false;
+            }
+            head = head.next;
+        }
+
+        return true;
     }
 
 }
