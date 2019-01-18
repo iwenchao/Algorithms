@@ -30,7 +30,7 @@ public class ReverseListAlgo {
      * @param head
      * @return
      */
-    private static ListNode reverseList(ListNode head) {
+    public static ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {//循环到单链表的最后一个节点，返回该节点
             return head;
         } else {
@@ -51,7 +51,7 @@ public class ReverseListAlgo {
     private static ListNode reverseList2(ListNode head) {
         ListNode pre = head;
         ListNode cur = head.next;
-        ListNode tmp = head.next.next;
+        ListNode tmp ;
         while (cur != null) {
             tmp = cur.next;
             cur.next = pre;
