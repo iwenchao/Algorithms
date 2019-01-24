@@ -1,6 +1,6 @@
 package com.iwenchaos.mdualgor.tree;
 
-import java.util.ArrayDeque;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -98,6 +98,8 @@ public class Traverse2XTreeAlgo {
      * 采用非递归的方式，使得已遍历的节点不再遍历
      * <p>
      * 中序遍历二叉树 左-根-右
+     *
+     * 补充：可以用来判断是否是搜索二叉树
      */
     public static void inorderTraverse2(TreeNode root) {
         if (root == null) return;
@@ -146,13 +148,15 @@ public class Traverse2XTreeAlgo {
 
     /**
      * 广度遍历 二叉树
+     *
+     * 补充：可以用来判断是否是完全二叉树
      */
     public static void flatOrderTraverse(TreeNode root) {
         if (root == null) return;
-        Queue<TreeNode> queue = new ArrayDeque<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
-            root = ((ArrayDeque<TreeNode>) queue).pop();
+            root = ((LinkedList<TreeNode>) queue).pop();
             System.out.print(root.value + "-->");
             if (root.left != null) {
                 queue.add(root.left);
