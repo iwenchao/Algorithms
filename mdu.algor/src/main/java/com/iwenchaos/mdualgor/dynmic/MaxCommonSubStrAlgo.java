@@ -24,7 +24,7 @@ public class MaxCommonSubStrAlgo {
     public static void main(String[] args){
         String str1 = "1AB2345CD";
         String str2 = "123456EF";
-        System.out.print(getMaxCommonStr(str1,genDynamicMatric(str1,str2)));
+        System.out.print(getAdvinceMaxCommonStr(str1,str2));
     }
 
 
@@ -36,6 +36,7 @@ public class MaxCommonSubStrAlgo {
      * @return
      */
     public static int[][] genDynamicMatric(String str1,String str2){
+        //常规的异常流省略
         char[] char1 = str1.toCharArray();
         char[] char2 = str2.toCharArray();
         int[][] dp = new int[char1.length][char2.length];
@@ -70,6 +71,7 @@ public class MaxCommonSubStrAlgo {
 
 
     public static String getMaxCommonStr(String str1,int[][] dp){
+        //常规的异常流省略
         int maxValue = 0;
         int endIndex = 0;
         for (int i = 0; i < dp.length ; i++) {
@@ -81,6 +83,54 @@ public class MaxCommonSubStrAlgo {
             }
         }
         return str1.substring(endIndex-maxValue+1,endIndex+1);
+    }
+
+
+    /**
+     * 优化动态规划算法；因为这个每个值[i][j]都与[i-1][j-1]有关，
+     * 所以这里只需要一个变量来保存这个，然后依次遍历每个斜线
+     * @param str1
+     * @param str2
+     * @return
+     */
+    public static String getAdvinceMaxCommonStr(String str1,String str2){
+        //常规的异常流省略
+        char[] char1 = str1.toCharArray();
+        char[] char2 = str2.toCharArray();
+
+        int row = 0;
+        int col = char2.length;
+        int max = 0;
+        int end = 0;
+        while (row<char1.length){
+            int i = row;
+            int j = col;
+            int len = 0;
+
+            while (i<char1.length && j<char2.length){
+                if(char1[i] != char2[j]){
+                    len=0;//说明[i][j]这个位置上的字符不相同，需要从新开始
+                }else {
+                    len++;
+                }
+
+                if(len > max){
+                    max = len;
+                    end = i;
+                }
+                i++;
+                j++;
+            }
+
+            if(col>0){//斜线的位置 从最右依次往左
+                col--;
+            }else {
+                row++;
+            }
+
+
+        }
+        return str1.substring(end-max+1,end+1);
     }
 
 
