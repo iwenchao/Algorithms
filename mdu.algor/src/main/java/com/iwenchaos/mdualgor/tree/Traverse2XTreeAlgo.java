@@ -128,11 +128,11 @@ public class Traverse2XTreeAlgo {
     public static void posorderTraverse2(TreeNode root) {
         if (root == null) return;
         Stack<TreeNode> s1 = new Stack<>();
-        Stack<TreeNode> s2 = new Stack<>();
+        Stack<TreeNode> saved = new Stack<>();
         s1.push(root);
         while (!s1.isEmpty()) {
             root = s1.pop();
-            s2.push(root);
+            saved.push(root);
             if (root.left != null) {
                 s1.push(root.left);
             }
@@ -140,8 +140,8 @@ public class Traverse2XTreeAlgo {
                 s1.push(root.right);
             }
         }
-        while (!s2.isEmpty()) {
-            System.out.print(s2.pop().value + "-->");
+        while (!saved.isEmpty()) {
+            System.out.print(saved.pop().value + "-->");
         }
     }
 

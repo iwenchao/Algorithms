@@ -19,7 +19,7 @@ public class UniqCharAlgo {
 
 
     public static void main(String[] args) {
-
+        findUniqChar2("loveleetcode");
     }
 
     /**

@@ -19,7 +19,7 @@ public class ReverseInteger {
     public static void main(String[] args) {
         //    public static final int MIN_VALUE = -2147483648;
         //    public static final int MAX_VALUE = 2147483647;
-        System.out.println(reverse(2147483647));
+        System.out.println(reverse(2147483));
     }
 
     //12345678

@@ -6,12 +6,13 @@ import java.util.Set;
 /**
  * Created by chaos
  * on 2018/9/18. 20:43
- * 文件描述：
+ * 文件描述： 字符串中的最长子串
  */
 public class SubDupStringMax {
 
     public static void main(String[] args) {
 
+        System.out.print(lengthOfLongestSubstring("adchcdaefg"));
 
     }
 
