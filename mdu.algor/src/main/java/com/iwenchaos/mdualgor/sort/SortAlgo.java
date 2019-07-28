@@ -182,6 +182,7 @@ public class SortAlgo {
                     minIndex = j;
                 }
             }
+            //如果最小元素不是待排序序列的第一个元素，将其和第一个元素互换；
             if(minIndex != i){
                 int minValue = arr[minIndex];
                 arr[minIndex] = arr[i];

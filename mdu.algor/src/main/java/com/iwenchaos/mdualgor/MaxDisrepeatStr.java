@@ -8,7 +8,7 @@ package com.iwenchaos.mdualgor;
 public class MaxDisrepeatStr {
 
     public static void main(String[] args) {
-        System.out.print(maxDisrepeatStrLen("adbchbcef"));
+        System.out.print(maxDisrepeatStrLen("adbchbcefghjkl"));
 
     }
 
